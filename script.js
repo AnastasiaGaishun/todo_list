@@ -1,4 +1,8 @@
+var items = [];
+
 function addItemBlock(newTextItem) {
+	items.push(newTextItem);
+	saveToStorage(items);
 	let itemDiv = document.createElement('div');
 	itemDiv.innerText = newTextItem;
 	document.querySelector('.list-tems').appendChild(itemDiv);
@@ -10,29 +14,22 @@ function onSubmitButton() {
 	elementInput.value = '';
 }
 
+function saveToStorage(items) {
+	localStorage.setItem('items', JSON.stringify(items))
+}
+
+function getFromStorage(items) {
+	return JSON.parse(localStorage.getItem('items'))
+}
+
+function init() {
+	getFromStorage().forEach(function(value) {
+		addItemBlock(value);
+	})
+}
+
+init();
+
 document.querySelector('.btn').addEventListener('click', onSubmitButton);
 
-
-
-
-
-
-
-// if (false) {
-// 	console.log('this true');
-// } else if (true) {
-// 	console.log('this else');
-// } else {
-// 	console.log('this default');
-// }
-// console.log('this end');
-
-// a = true;
-// b = false;
-// c = false;
-// d = true;
-
-// if (a && b && c || c || d || a && c) {
-// 	console.log('this true');
-// }
 
