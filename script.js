@@ -5,7 +5,7 @@ function addItemBlock(newTextItem) {
 	saveToStorage(items);
 	let itemDiv = document.createElement('div');
 	itemDiv.innerText = newTextItem;
-	document.querySelector('.list-tems').appendChild(itemDiv);
+	document.querySelector('.item').appendChild(itemDiv);
 }
 
 function onSubmitButton() {
@@ -32,4 +32,10 @@ init();
 
 document.querySelector('.btn').addEventListener('click', onSubmitButton);
 
+let page = document.querySelector('.page');
+let themeButton = document.querySelector('.theme-button');
 
+themeButton.onclick = function() {
+	page.classList.toggle('light-theme');
+	page.classList.toggle('dark-theme');
+};
