@@ -1,7 +1,28 @@
-<input class="todo-input" type="text" placeholder="Input text">
-<button class="btn btn-submit">Save</button>
-
-<div class="list-tems">
-</div>
-
-<script src="script.js"></script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+	</head>
+	<body class="page light-theme">
+		<div class="wrap">
+			<div class="content">
+				<header>
+					<h1>Hello! I AM TODOList.</h1>
+					<button class="theme-button" type="button">Change theme</button>
+				</header>
+				<div class="input">
+					<input class="todo-input" type="text" placeholder="  input your text...">
+					<button class="btn btn-submit">save</button>
+				</div>
+				<div class="list-items">
+					<div class="item"><p></p></div>
+					<button class="btn-rem"><p>x</p></button>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
