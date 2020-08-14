@@ -1,141 +1,171 @@
+
 *{
 	box-sizing: border-box;
    	margin: 0;
     padding: 0;
 }
-.wrap{ 
-	background: #E5E5E5;
-	height: 1000px;
-}
-.content{
+
+.wrapper { 
 	margin: 0 auto;
-	background: #C4C4C4;
+	background: #c4c4c4;
 	max-width: 1366px;
-  	height: 765px;
-  	width: 80%;
+	height: 765px;
 }
-header{
-    background: #FF9393;
-    border: 1px solid #000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    text-align: center;
-    padding: 1.5em;
-    font-family: Roboto;
-  	position: relative;
+
+.header {
+	position: relative;
+	background: #ff9393;
+	height: 90px;
+	border: 1px solid #000000;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	text-align: center;
+	padding: 24px;
+	font-family: Roboto;
+	font-size: 34px;
+	font-weight: bold;
 	max-width: 1366px;
-    }
-    .theme-button{
-    	outline: none;
-        position: absolute;
-        left: 1em;
-        top: 1em;
-        border: 1px solid #000;
-        border-radius: 5px;
-        padding: 1.5em;
-        background: #E0E0E0;
-    }
-.input{
-    margin: 30px auto;
-	text-align: center;    
 }
- .todo-input{
+
+.theme-button {
+	position: absolute;
+	height: 60px;
+	padding: 22px;
+	left: 12px;
+    top: 12px;
+    outline: none;
+    background: #808080;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form {
+	margin: 30px auto;
+	text-align: center; 
+}
+
+.todo-input {
  	outline: none;
  	width: 599px;
-	height: 69px;
-	border: none;
-	background: #C2C2C2;
-	box-shadow: 0px 0px 10px #000;
-	border-radius: 5px;
-	font-size: 36px;
-	line-height: 42px;
- }
+ 	height: 69px;
+ 	border: none;
+ 	background: #c2c2c2;
+ 	box-shadow: 0px 0px 10px #000000;
+ 	border-radius: 5px;
+ 	font-size: 36px;
+ 	padding-left: 10px;
+} 	
+
 .btn-submit{
 	outline: none;
- 	width: 158px;
+	width: 158px;
 	height: 70px;
 	border: none;
 	margin-left: 20px;
-	background: #C2C2C2;
-	box-shadow: 0px 0px 10px #000;
+	background: #c2c2c2;
+	box-shadow: 0px 0px 10px #000000;
 	border-radius: 5px;
 	font-size: 36px;
-	line-height: 42px;
- }
- 
-.list-items{
-	position: relative;
- 	width: 780px;
+	cursor: pointer;
+}
+
+.list-items {
+	max-width: 780px;
 	height: 526px;
-	background: #C4C4C4;
+	background: #c4c4c4;
 	box-shadow: 0px 0px 20px #000000;
 	border-radius: 5px;
- 	margin: 0 auto 20px;
- 	padding: 30px 20px 30px 20px;
- }
-.item{
+	margin: 0 auto 20px;
+	padding: 30px 20px 30px 20px;
+}
+
+.item {
+	position: relative;
 	margin: 0 auto;
-	width: 735px;
+	max-width: 735px;
 	height: 66px;
-	background: #E0E0E0;
+	background: #808080;
 	border-radius: 5px;
+	margin-bottom: 10px; 
 }
-.btn-rem{
-	outline: none;
+
+.btn-rem {
 	position: absolute;
-	bottom: 455px;
+	right: 40px;
+	top: 5px;
+	cursor: pointer;
+}
+
+.btn-edit {
+	position: absolute;
 	right: 10px;
-	width: 52px;
-	height: 52px;
-	background: #FF9393;
-	border: none;
-	border-radius: 25px;
+	top: 5px;
+	cursor: pointer;
 }
-.btn-rem p{
-	position: absolute;
-	bottom: 25px;
-	right: 15px;
-	width: 22px;
-	height: 23px;
-	font-family: Roboto;
-	font-weight: bold;
-	font-size: 36px;
-	line-height: 42px;
-	color: #000;
-}
-.dark-theme .wrap{
-	background: #8A2BE2;
-}
-.dark-theme .content{
+
+.dark-theme .wrapper {
 	background: #4B0082;
 }
-.dark-theme header{
+
+.dark-theme .header {
   	color: white;
   	background: #000;
   	border: 1px solid white;
 }
-.dark-theme .theme-button{
+
+.dark-theme .theme-button {
   	color: white;
   	background: #8A2BE2;
   	border: 1px solid white;
 }
-.dark-theme .todo-input{
+
+.dark-theme .todo-input {
 	background: #4B0082;
+	color: #ffffff;
 }
-.dark-theme .btn-submit{
+
+.dark-theme .btn-submit {
 	color: white;
 	background: #4B0082;
 }
-.dark-theme .list-items{
+
+.dark-theme .list-items {
 	color: white;
 	background: #4B0082;
 }
-.dark-theme .item{
+
+.dark-theme .item {
 	color: white;
 	background: #8A2BE2;
 }
-.dark-theme .btn-rem{
-	background: #000;
-}
-.dark-theme .btn-rem p{
-	color: white;
+
+
+@media(max-width: 800px) {
+	.theme-button {
+		width: 60px;
+		padding: 5px;
+	}
+
+	.list-items{
+		margin: 10px;
+	}
+
+	.todo-input {
+		width: 220px;
+		height: 40px;
+		font-size: 20px;
+		margin-bottom: 10px;
+
+	}
+
+	.btn-submit{
+		width: 50px;
+		height: 40px;
+		font-size: 20px;
+	}
+
+	.item {
+		height: 30px;
+	}
+
 }
