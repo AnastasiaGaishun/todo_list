@@ -1,36 +1,29 @@
-var items = [];
+document.querySelector('.btn').addEventListener('click', addTask);
+document.querySelector('.list-items').addEventListener('click', removeTask);
+let MyFuncCalls =  0;
+let MyFuncCallsDiv = 'item';
+function addTask() {
+	MyFuncCalls++;
+	let text = document.querySelector('.todo-input').value;
+	
+	let oldHtml = document.querySelector('.list-items').innerHTML;
+	document.querySelector('.list-items').innerHTML = `${oldHtml}<div class = ${MyFuncCallsDiv + MyFuncCalls}>${text}<div><button id = ${MyFuncCalls}>x`;
+	document.querySelector('.todo-input').value = '';
+} 
+function removeTask(event){
+	let yesdiv = event.path[2];
+	yesdiv.remove();
+	MyFuncCalls = 0;
+	let val = document.querySelector('.list-items').children;
+	let valCount = document.querySelector('.list-items').childElementCount;
+	let valName = String(val[0].className);
 
-function addItemBlock(newTextItem) {
-	items.push(newTextItem);
-	saveToStorage(items);
-	let itemDiv = document.createElement('div');
-	itemDiv.innerText = newTextItem;
-	document.querySelector('.item').appendChild(itemDiv);
+	for(index = 0;index<=valCount;index++) {
+	MyFuncCalls++;	
+	val[index].ClassList.remove(valName);
+	val[index].ClassList.add(MyFuncCallsDiv + MyFuncCalls);		
+	}
 }
-
-function onSubmitButton() {
-	let elementInput = document.querySelector('.todo-input');
-	addItemBlock(elementInput.value);
-	elementInput.value = '';
-}
-
-function saveToStorage(items) {
-	localStorage.setItem('items', JSON.stringify(items))
-}
-
-function getFromStorage(items) {
-	return JSON.parse(localStorage.getItem('items'))
-}
-
-function init() {
-	getFromStorage().forEach(function(value) {
-		addItemBlock(value);
-	})
-}
-
-init();
-
-document.querySelector('.btn').addEventListener('click', onSubmitButton);
 
 let page = document.querySelector('.page');
 let themeButton = document.querySelector('.theme-button');
